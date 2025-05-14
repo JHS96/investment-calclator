@@ -38,7 +38,10 @@ function App() {
       <Header />
       <main>
         <UserInputArea handleChange={handleChange} values={values} />
-        <ResultTable data={data} />
+        {duration <= 0 && (
+          <p className='center'>Please enter a duration greater than zero.</p>
+        )}
+        {duration > 0 && <ResultTable data={data} />}
       </main>
     </>
   );
